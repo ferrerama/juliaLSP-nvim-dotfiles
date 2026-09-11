@@ -1,0 +1,1 @@
+C:/Users/mferrera/ws/julia/env/jul_lsp/lsp_server.jl
