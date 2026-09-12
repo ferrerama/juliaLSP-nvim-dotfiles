@@ -49,7 +49,7 @@ require("lazy").setup({
 -- PLUGS
 {
 "neovim/nvim-lspconfig",
-ft = { "julia", "lua", "c", "cpp" },
+ft = { "julia", "lua"},
 dependencies = {
 "hrsh7th/nvim-cmp",
 "hrsh7th/cmp-nvim-lsp",
@@ -133,20 +133,6 @@ autostart = true,
 })
 vim.lsp.enable("lua_ls")
 
-vim.lsp.config("clangd", {
- cmd = {
-  "clangd",
-  "--all-scopes-completion=false",
-  "--header-insertion=never",
-  "--completion-style=bundled",
-},
- filetypes = { "c", "cpp" },
- root_dir = vim.fs.root(0, { "compile_commands.json", ".git" }),
- autostart = true,
- capabilities = capabilities,
-})
-vim.lsp.enable("clangd")
-
 vim.lsp.config("julials", {
  cmd = { "julia", "--project=@.", vim.fn.expand("~") .. "/ws/julia/env/jul_lsp/lsp_server.jl" },
  filetypes = { "julia" },
@@ -158,20 +144,6 @@ vim.lsp.enable("julials")
 
 vim.log.level = vim.log.levels.DEBUG
  end,
-},
-
-{
-"cdelledonne/vim-cmake",
- ft = { "c", "cpp" },
- config = function()
-  local keymap = vim.keymap.set
-  keymap("", "<leader>mg", ":CMakeGenerate<CR>", { desc = "CMake Generate" })
-  keymap("", "<leader>mb", ":CMakeBuild<CR>", { desc = "CMake Build" })
-  keymap("", "<leader>mt", ":CMakeTest<CR>", { desc = "CMake Test" })
-  keymap("", "<leader>mc", ":CMakeClean<CR>", { desc = "CMake Clean" })
-  keymap("", "<leader>mq", ":CMakeClose<CR>", { desc = "CMake Close" })
-  vim.g.cmake_link_compile_commands = 1
-end,
 },
 
 {
@@ -336,12 +308,3 @@ vim.keymap.set('i', '<C-s>', '<Esc>:wa<CR>', { desc = 'Guardar todos (insert)' }
 vim.keymap.set('n', '<C-q>', ':q<CR>', { desc = 'Cerrar ventana' })
 vim.keymap.set('n', '<C-x>', ':wqall<CR>', { desc = 'Guardar y salir de todo' })
 vim.keymap.set('i', '<C-x>', '<Esc>:wqall<CR>', { desc = 'Guardar y salir de todo (insert)' })
-
-vim.keymap.set("n", "<leader>lv", function()
-  if vim.bo.filetype == "html" then
-    vim.cmd(string.format("botright 3split | terminal julia --project=\"%s\" -e \"using LiveServer; serve(launch_browser=true)\"", vim.g.julia_project_path))
-    vim.cmd("startinsert")
-  else
-    vim.notify("LiveServer solo se activa en archivos HTML", vim.log.levels.WARN)
-  end
-end, { silent = true, desc = "Julia LiveServer" })
