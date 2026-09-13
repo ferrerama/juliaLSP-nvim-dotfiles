@@ -1,44 +1,45 @@
-# juliaLSP-nvim-dotfiles 🚀
+# juliaLSP-nvim-dotfiles
 
-Mi entorno portátil y minimalista para **Neovim**, optimizado a fondo para el desarrollo fluido en **Julia**, **Lua** y **C/C++**.
-Lua es porque por defecto es lenguaje base para revisar errores en el init.lua, C/C++ por existe necesitar de generar una libreria.
-Este espacio está pensado para ser ligero, productivo y completamente desacoplado de configuraciones globales del sistema operativo.
-
----
-
-## Características Principales
-
-*   Julia Devflow Nativo:** Integración directa para enviar y ejecutar código en el REPL de Julia al instante con `<leader>jr`.
-*   Servidor de Lenguajes (LSP):** Autocompletado inteligente y diagnósticos integrados en tiempo real para `Julia`, `Lua`, y `C/C++` mediante `nvim-lspconfig`.
-*   Servidor en Vivo Embebido:** Lanza un servidor dinámico con recarga automática directo desde tus archivos HTML usando `LiveServer.jl` con el atajo `<leader>lv`.
-*   Interfaz Estética:** Apariencia Nord elegante y limpia, barra de estado informativa (`lualine`), e intuitivo árbol de archivos (`nvim-tree`).
-*   Navegación Ultra Rápida:** Buscador de archivos y textos en tiempo real potenciado por `Telescope`.
+My portable and minimalist **Neovim** environment, fully optimized for a smooth development workflow in portable **Julia**.
+Lua is included because it is the default base language for checking errors in `init.lua`, 
+This setup is designed to be lightweight, productive, and completely decoupled from global operating system configurations, but it Works on Linux.
 
 ---
 
-## Atajos de Teclado Clave (Keymaps)
+## Key Features
 
-El botón `<Leader>` está asignado al **Espacio (` `)**.
-
-### Operaciones de Código
-*   `<Leader>jr` ➔ Levanta el REPL de Julia y ejecuta el archivo actual en una terminal integrada.
-*   `<Leader>lv` ➔ Inicia un servidor web `LiveServer` automático (exclusivo para archivos HTML).
-
-### Productividad & Navegación
-*   `<Leader>ff` ➔ Buscar archivos en tu espacio de trabajo.
-*   `<Leader>fg` ➔ Buscar palabras dentro de todos tus archivos (*Live Grep*).
-*   `<Leader>e`  ➔ Abrir / Cerrar el explorador de archivos izquierdo (`NvimTree`).
-*   `<Leader>ft` ➔ Desplegar una terminal flotante integrada (`PowerShell`).
-
-### Comodidad del Sistema
-*   `Ctrl + s` ➔ Guardar todos los archivos abiertos (funciona tanto en modo Normal como Insertar).
-*   `Ctrl + a` ➔ Seleccionar absolutamente todo el texto del archivo.
-*   `Ctrl + c` ➔ Copiar el texto seleccionado directamente al portapapeles del sistema.
-*   `Ctrl + x` ➔ Guardar todos los cambios abiertos y cerrar Neovim por completo.
+*   **Native Julia Devflow:** Direct integration to instantly send and execute code in the Julia REPL using `<leader>jr`.
+*   **Language Server Protocol (LSP):** Intelligent autocompletion and integrated real-time diagnostics for `Julia`, `Lua`, and `C/C++` via `nvim-lspconfig`.
+*   **Aesthetic Interface:** Clean and elegant Nord appearance, an informative status line (`lualine`), and an intuitive file tree (`nvim-tree`).
+*   **Ultra-Fast Navigation:** Real-time file and text searching powered by `Telescope`.
 
 ---
 
-## Gestor de Plugins
+## Keymaps
 
-Todo el entorno se autogestiona usando **Lazy.nvim**. Al iniciar Neovim en una máquina nueva por primera vez, el gestor clonará e instalará automáticamente todos los complementos declarados.
+The `<Leader>` key is mapped to the **Spacebar (` `)**.
 
+### Code Operations
+*   `<Leader>jr` ➔ Launches the Julia REPL and executes the current file in an integrated terminal.
+
+### Productivity & Telescope navigation
+*   `<Leader>ff` ➔ Find files within your workspace.
+*   `<Leader>fg` ➔ Search for text across all your files (*Live Grep*).
+*   `<Leader>e`  ➔ Open / Close the left file explorer (`NvimTree`).
+*   `<Leader>ft` ➔ Toggle an integrated floating terminal (`PowerShell`).
+
+### System Convenience
+*   `Ctrl + s` ➔ Save all open files (works in both Normal and Insert modes).
+*   `Ctrl + a` ➔ Select all text in the current file.
+*   `Ctrl + c` ➔ Copy the selected text directly to the system clipboard.
+*   `Ctrl + x` ➔ Save all open changes and completely exit Neovim.
+
+---
+
+## Plugin Manager
+
+The entire environment is self-managed using **Lazy.nvim**. When launching Neovim on a new machine for the first time, the manager will automatically clone and install all declared plugins.
+
+## Notes
+*  Change real user en julia_lsp.jl
+*  Put in path, I use portable **gcc/x86_64-w64-mingw32/14.2.0** for tree-sitter + make for telescope. 

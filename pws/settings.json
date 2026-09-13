@@ -1,0 +1,160 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Google Chrome Light"
+            },
+            "id": "User.setColorScheme.DEE17BF"
+        },
+        {
+            "command": 
+            {
+                "action": "setColorScheme",
+                "colorScheme": "Campbell"
+            },
+            "id": "User.setColorScheme.82EE3248"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "keybindings": 
+    [
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.setColorScheme.DEE17BF",
+            "keys": "ctrl+alt+l"
+        },
+        {
+            "id": "User.setColorScheme.82EE3248",
+            "keys": "ctrl+alt+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "padding": "8, 8, 8, 8",
+            "selectionBackground": "#D2E3FC"
+        },
+        "list": 
+        [
+            {
+                "colorScheme": "Campbell",
+                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\" -NoLogo",
+                "font": 
+                {
+                    "face": "Hack Nerd Font"
+                },
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "opacity": 80,
+                "source": "Windows.Terminal.PowershellCore",
+                "useAcrylic": true
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "S\u00edmbolo del sistema"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#FFFFFF",
+            "black": "#3C4043",
+            "blue": "#1A73E8",
+            "brightBlack": "#70757A",
+            "brightBlue": "#4285F4",
+            "brightCyan": "#24C1E0",
+            "brightGreen": "#34A853",
+            "brightPurple": "#A142F4",
+            "brightRed": "#EA4335",
+            "brightWhite": "#F8F9FA",
+            "brightYellow": "#FBBC04",
+            "cursorColor": "#4285F4",
+            "cyan": "#17A2B8",
+            "foreground": "#3C4043",
+            "green": "#1E8E3E",
+            "name": "Google Chrome Light",
+            "purple": "#9334E6",
+            "red": "#D93025",
+            "selectionBackground": "#D1E3FF",
+            "white": "#FFFFFF",
+            "yellow": "#F9AB00"
+        }
+    ],
+    "theme": "Universal",
+    "themes": 
+    [
+        {
+            "name": "ChromeLight",
+            "tabRow": 
+            {
+                "background": "#DEE1E6FF",
+                "unfocusedBackground": "#F1F3F4FF"
+            },
+            "window": 
+            {
+                "applicationTheme": "light",
+                "experimental.rainbowFrame": false,
+                "frame": "#DEE1E6FF",
+                "unfocusedFrame": "#F1F3F4FF",
+                "useMica": true
+            }
+        },
+
+
+    {
+        "name": "Universal",
+        "tabRow": 
+        {
+            "background": "#202124", // a very hard(like such as hard Chrome)
+            "unfocusedBackground": "#2F3033"
+        },
+        "window": 
+        {
+            "applicationTheme": "dark", // El template will be hard, for light.
+            "useMica": false,            // give effect crystal.
+            "frame": "#202124"
+        }
+    }
+
+    ]
+}

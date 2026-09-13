@@ -2,21 +2,21 @@ import Pkg
 using LanguageServer
 using SymbolServer
 
-# 🚦 Forzar depot portable ANTES de activar
-ENV["JULIA_DEPOT_PATH"] = "C:/Users/USUARIO/ws/julia/share/julia;C:/Users/mferrera/.julia"
+# 🚦 Force depot portable BEFORE activate
+ENV["JULIA_DEPOT_PATH"] = "C:/Users/USUARIO/ws/julia/share/julia;C:/Users/USUARIO/.julia"
 println(Base.stderr, "DEPOT_PATH activo: ", ENV["JULIA_DEPOT_PATH"])
 
-# 🚦 Activar entorno portable
+# 🚦 Activate the portable environment
 # project_path = "C:/Users/USUARIO/ws/julia/env"
 project_path = length(ARGS) > 0 ? ARGS[1] : "C:/Users/USUARIO/ws/julia/env"
 Pkg.activate(project_path)
 
-# 🚦 Pasar depot_path como String (no vector)
+# 🚦 Pass depot_path as String (not vector)
 server = LanguageServerInstance(
     stdin,
     stdout,
     project_path,
-    ENV["JULIA_DEPOT_PATH"],  # aquí va la cadena completa
+    ENV["JULIA_DEPOT_PATH"],  # here string complete
 )
 
 run(server)
